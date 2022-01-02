@@ -14,9 +14,6 @@ export const Banner = (props: {
     if (mainBg && props.useBannerBg) {
       mainBg.style.backgroundImage = `url(${props.src})`;
       mainBg.style.display = 'inline-block';
-      if (gradient) {
-        gradient.style.display = 'inline-block';
-      }
     }
 
     return () => {
@@ -25,7 +22,6 @@ export const Banner = (props: {
         mainBg.style.backgroundImage = '';
         mainBg.style.display = 'none';
       }
-      if (gradient) gradient.style.display = 'none';
     };
   }, [props.src, props.useBannerBg]);
 
