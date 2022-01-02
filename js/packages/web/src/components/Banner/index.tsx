@@ -11,7 +11,6 @@ export const Banner = (props: {
 }) => {
   useEffect(() => {
     const mainBg = document.getElementById('main-bg');
-    const gradient = document.getElementById('bg-gradient');
     if (mainBg && props.useBannerBg) {
       mainBg.style.backgroundImage = `url(${props.src})`;
       mainBg.style.display = 'inline-block';
@@ -22,7 +21,6 @@ export const Banner = (props: {
 
     return () => {
       const mainBg = document.getElementById('main-bg');
-      const gradient = document.getElementById('bg-gradient');
       if (mainBg && props.useBannerBg) {
         mainBg.style.backgroundImage = '';
         mainBg.style.display = 'none';
@@ -45,7 +43,6 @@ export const Banner = (props: {
         id={'current-banner'}
         style={{ backgroundImage: `url(${props.src})` }}
       >
-        <span id={'gradient-banner'}></span>
         <div id="banner-inner">
           <div id={'message-container'}>
             <div id={'main-heading'}>{props.headingText}</div>
@@ -53,11 +50,6 @@ export const Banner = (props: {
             {props.actionComponent}
           </div>
           {props.children}
-          <div className="powered-by">
-            <span>
-              POWERED BY <b>METAPLEX</b>
-            </span>
-          </div>
         </div>
       </div>
     </>
